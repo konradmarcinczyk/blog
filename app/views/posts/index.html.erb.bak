@@ -1,0 +1,16 @@
+<h1>Witam na moim blogu</h1>
+
+<table>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+	<td><%= time_ago_in_words post.created_at %> ago</td>
+    <td><%= link_to 'Pokaz', post %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nowy Post', new_post_path %>
